@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
+    public ScoreDisplay sd;
     void OnTriggerEnter(Collider other)
     {
         // Проверяем, что это игрок
@@ -9,6 +10,7 @@ public class Collectible : MonoBehaviour
         {
             // Уничтожаем текущий объект
             Destroy(gameObject);
+            sd.CurrentScore++;
         }
     }
 }
